@@ -28,7 +28,7 @@ const images = {
     u: "images/umbrella.webp",
     v: "images/van.webp",
     w: "images/watch.webp",
-    x: "images/xmass-tree.jpg",  
+    x: "images/xmass-tree.webp",  
     y: "images/yam.png",
     z: "images/zebra.jpg"
 };
