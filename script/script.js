@@ -12,8 +12,25 @@ const images = {
     e: "images/elephant.jpg",
     f: "images/fish.jpg",
     g: "images/giraffe.jpg",
-    h: "images/horse.jpg",
+    h: "images/house.jpg",
     i: "images/ice-cream.jpg",
+    j: "images/jacket.webp",
+    k: "images/kite.jpg",
+    l: "images/lorry.jpg",
+    m: "images/monkey.png",
+    n: "images/net.webp",
+    o: "images/ostrich.jpg",    
+    p: "images/pencil.jpg",
+    q: "images/queen.webp",
+    r: "images/rabbit.jpg",
+    s: "images/socks.png",
+    t: "images/tap.webp",
+    u: "images/umbrella.webp",
+    v: "images/van.webp",
+    w: "images/watch.webp",
+    x: "images/xmass-tree.jpg",  
+    y: "images/yam.png",
+    z: "images/zebra.jpg"
 };
 
 buttons.forEach(button => {
