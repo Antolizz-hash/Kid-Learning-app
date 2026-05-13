@@ -6,9 +6,83 @@
 body{
     margin: 10;
     padding: 20;
+    min-height: 100vh;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+
+nav ul{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+}
+nav li{
+    height: 50px;
+}
+nav a{
+    height: 100%;
+    padding: 0 30px;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    color: black
+}
+nav a:hover{
+    background-color: #f3ededc4;
+}
+nav li:first-child {
+    margin-right: auto;
+    
+}
+
+.sidebar{
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    width: 250px;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    background-color: #504e4e28;
+
+    padding: 20px;
+
+    z-index: 1000;
+
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li{
+    width: 100%;
+}
+
+.sidebar a{
+    width: 100%;
+}
+
+.close-btn{
+    border: none;
+    background: none;
+    font-size: 40px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.menu-btn{
+    font-size: 40px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+
 
 .preview{
     position: sticky;
@@ -16,7 +90,7 @@ body{
 
     background-color: white;
 
-    z-index: 1000;
+    z-index: 1;
 
     /* padding: 20px; */
 }
@@ -29,6 +103,10 @@ div.container{
     align-items: center;
     justify-items: center;
 }
+
+
+
+
 .display{
     width: 100%;
     height: 180px;
@@ -46,12 +124,14 @@ div.container{
     width: 100%;
     height: 150px;
     background-color: #f0f0f0;
-    /* border: 1px solid black; */
+    /* border: 1px solid rgb(160, 14, 14); */
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    /* border-radius: 50%; */
 }
+
 div.container .phonics{
     width: 100px;
     height: 100px;
@@ -64,7 +144,14 @@ div.container .phonics{
     background-color: blue;
     color: white;
 }
-@media(max-width: 480px){
+.navigation{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+@media(max-width: 600px){
 
     .phonics{
         height: 70px;
@@ -73,6 +160,26 @@ div.container .phonics{
 
     .display{
         font-size: 45px;
+        height: 120px;
+        width: 100%;
     }
+    .image-container{
+        height: 120px;
+    }
+    .image-container img{
+        /* width: 100%; */
+        height: 100%;
+        object-fit: contain;
+    }
+    .navigation{
+        flex-direction: column;
+    }
+     .menu-btn{
+        display: none;
+    }
+    .hideOnMobile{
+        display: none;
+    }
+
 
 }
