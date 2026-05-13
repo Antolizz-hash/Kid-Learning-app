@@ -74,12 +74,9 @@ nav li:first-child {
     margin-bottom: 20px;
 }
 
-.menu-btn{
-    font-size: 40px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    padding: 10px 20px;
+.menu{
+    
+    display: none;
 }
 
 
@@ -174,8 +171,8 @@ div.container .phonics{
     .navigation{
         flex-direction: column;
     }
-     .menu-btn{
-        display: none;
+     .menu{
+        display: block;
     }
     .hideOnMobile{
         display: none;
