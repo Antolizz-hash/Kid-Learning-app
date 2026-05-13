@@ -8,8 +8,12 @@ const images = {
     a: "images/apple.png",
     b: "images/ball.png",
     c: "images/cat.webp",
-    d: "images/dog.png",
-    e: "images/eagle.png"
+    d: "images/dog.jpg",
+    e: "images/elephant.jpg",
+    f: "images/fish.jpg",
+    g: "images/giraffe.jpg",
+    h: "images/horse.jpg",
+    i: "images/ice-cream.jpg",
 };
 
 buttons.forEach(button => {
