@@ -4,49 +4,149 @@ let buttons = document.querySelectorAll(".phonics");
 
 let image = document.getElementsByClassName("image")[0];
 
-const images = {
-    a: "images/apple.png",
-    b: "images/ball.png",
-    c: "images/cat.webp",
-    d: "images/dog.jpg",
-    e: "images/elephant.jpg",
-    f: "images/fish.jpg",
-    g: "images/giraffe.jpg",
-    h: "images/house.jpg",
-    i: "images/ice-cream.jpg",
-    j: "images/jacket.webp",
-    k: "images/kite.jpg",
-    l: "images/lorry.jpg",
-    m: "images/monkey.png",
-    n: "images/net.webp",
-    o: "images/ostrich.jpg",    
-    p: "images/pencil.jpg",
-    q: "images/queen.webp",
-    r: "images/rabbit.jpg",
-    s: "images/socks.png",
-    t: "images/tap.webp",
-    u: "images/umbrella.webp",
-    v: "images/van.webp",
-    w: "images/watch.webp",
-    x: "images/xmass-tree.webp",  
-    y: "images/yam.png",
-    z: "images/zebra.jpg"
+const phonicsData = {
+
+    a: {
+        image: "images/apple.png",
+        word: "Apple"
+    },
+
+    b: {
+        image: "images/ball.png",
+        word: "Ball"
+    },
+
+    c: {
+        image: "images/cat.webp",
+        word: "Cat"
+    },
+
+    d: {
+        image: "images/dog.jpg",
+        word: "Dog"
+    },
+
+    e: {
+        image: "images/elephant.jpg",
+        word: "Elephant"
+    },
+    f:{
+        image: "images/fish.jpg",
+        word: "Fish"
+    },
+
+    g: {
+        image: "images/giraffe.jpg",
+        word: "Giraffe"
+    },
+    h:{
+        image: "images/horse.jpg",
+        word: "Horse"
+    },
+
+    i: {
+        image: "images/ice-cream.jpg",
+        word: "Ice Cream"
+    },
+    j:{
+        image: "images/jacket.webp",
+        word: "Jacket"
+    },
+
+    k: {
+        image: "images/kite.jpg",
+        word: "Kite"        
+    },
+    l: {
+        image: "images/lorry.jpg",
+        word: "Lorry"
+    },
+
+    m: {
+        image: "images/monkey.png",
+        word: "Monkey"
+    },
+    n: {
+        image: "images/net.webp",
+        word: "Net"
+    },
+
+    o: {
+        image: "images/ostrich.jpg",
+        word: "Ostrich"
+    },
+    p: {
+        image: "images/pencil.jpg",
+        word: "Pencil"
+    },  
+    q: {
+        image: "images/queen.webp",
+        word: "Queen"
+    },
+    r: {
+        image: "images/rabbit.jpg",
+        word: "Rabbit"
+    },
+    s: {
+        image: "images/socks.png",
+        word: "Socks"
+    },
+    t: {
+        image: "images/tap.webp",
+        word: "Tap"
+    },
+    u: {
+        image: "images/umbrella.webp",
+        word: "Umbrella"
+    },
+    v: {
+        image: "images/van.webp",
+        word: "Van"
+    },  
+    w: {
+        image: "images/watch.webp",
+        word: "Watch"
+    },
+    x: {
+        image: "images/xmass-tree.webp",
+        word: "X-Mas Tree"
+    },
+    y: {
+        image: "images/yam.png",
+        word: "Yam"
+    },
+    z: {
+        image: "images/zebra.jpg",
+        word: "Zebra"
+    }
+
 };
 
 buttons.forEach(button => {
 
     button.addEventListener("click", function(){
 
+        let letter = this.innerText.trim().toLowerCase();
+
         display.innerText = this.innerText;
 
-        let letter = this.innerText.toLowerCase();
+        image.src = phonicsData[letter].image;
 
         let audio = new Audio(`sounds/${letter}.m4a`);
 
         audio.play();
 
-        image.src = images[letter];
-        console.log(images[letter]);
+        audio.onended = function(){
+
+            let speech = new SpeechSynthesisUtterance(
+                phonicsData[letter].word
+            );
+
+            speech.lang = "en-US";
+
+            window.speechSynthesis.speak(speech);
+
+        };
 
     });
 
