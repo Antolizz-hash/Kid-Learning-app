@@ -10,6 +10,10 @@ body{
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
 
 nav ul{
     width: 100%;
@@ -101,9 +105,6 @@ div.container{
     justify-items: center;
 }
 
-
-
-
 .display{
     width: 100%;
     height: 180px;
@@ -179,4 +180,80 @@ div.container .phonics{
     }
 
 
+}
+
+/* reading css */
+.reading-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+    background-color: hsl(0, 18%, 93%);
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box; /* Prevents viewport overflow */
+}
+
+/* FIX: Changed height to 50% so there is visual room for the image below it */
+.sounds{
+    background-color: white;
+    width: 100%;
+    height: 80%; 
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    font-weight: bold;
+    border-radius: 10px; /* Optional: rounds the white board corners */
+}
+
+.image-container{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.read-button{
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: hsl(14, 82%, 56%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.image{
+    width: 300px;
+    height: 300px;
+    /* border-radius: 50%; */
+    /* object-fit: cover; */
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 1s ease;
+}
+
+.image.show{
+    opacity: 1;
+    visibility: visible;
+}
+
+@keyframes bounce{
+    0%{ transform: translateY(0); }
+    50%{ transform: translateY(-30px); } /* Increased height slightly for 150px text */
+    100%{ transform: translateY(0); }
+}
+
+/* FIX: Removed the 2s delay so it snaps perfectly to the JavaScript audio trigger */
+.bounce{
+    animation: bounce 0.5s ease;
 }
