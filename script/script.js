@@ -26,7 +26,7 @@ const phonicsData = {
     },
 
     c: {
-        image: "images/cat.webp",
+        image: "images/cat.png",
         word: "Cat"
     },
 
