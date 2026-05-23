@@ -9,25 +9,25 @@ let image = document.querySelector('.image')
 let myScore = 0;
 
 let wordList = [
-    {word:"cat", sound:"../sounds/cat.m4a", myImage:"../images/cool-cat.webp"},
+    {word:"cat", sound:"../sounds/cat.mp3", myImage:"../images/cool-cat.webp"},
 
-    {word:'bag', sound:'../sounds/bag.m4a', myImage:'../images/bag.jpg'},
+    {word:'bag', sound:'../sounds/bag.mp3', myImage:'../images/bag.jpg'},
 
-    {word:'mat', sound:'../sounds/mat.m4a', myImage:'../images/mat.webp'},
+    {word:'mat', sound:'../sounds/mat.mp3', myImage:'../images/mat.webp'},
     
-    {word:'fan', sound:'../sounds/fan.m4a',       myImage:'../images/fan.jpg'},
+    {word:'fan', sound:'../sounds/fan.mp3',       myImage:'../images/fan.jpg'},
 
-    {word:'dog', sound:'../sounds/dog.m4a', myImage:'../images/dog.jpg'},
+    {word:'dog', sound:'../sounds/dog.mp3', myImage:'../images/dog.jpg'},
 
-    {word:'fat', sound:'../sounds/fat.m4a', myImage:'../images/fat.jpg'},
+    {word:'fat', sound:'../sounds/fat.mp3', myImage:'../images/fat.jpg'},
 
-    {word:'hat', sound:'../sounds/hat.m4a', myImage:'../images/hat.jpg'},
+    {word:'hat', sound:'../sounds/hat.mp3', myImage:'../images/hat.jpg'},
 
-    {word:'ax', sound:'../sounds/ax.m4a', myImage:'../images/axe.jpg'},
+    {word:'ax', sound:'../sounds/ax.mp3', myImage:'../images/ax.jpg'},
 
-    {word:'man', sound:'../sounds/man.m4a', myImage:'../images/man.jpg'},
+    {word:'man', sound:'../sounds/man.mp3', myImage:'../images/man.jpg'},
 
-    {word:'tap', sound:'../sounds/tap.m4a', myImage:'../images/tap.webp'},
+    {word:'tap', sound:'../sounds/tap.mp3', myImage:'../images/tap.webp'},
 ]
 
 
@@ -61,15 +61,28 @@ startButton.addEventListener('click', function(){
 
                 setTimeout(()=>{
                     word.textContent = ""
+                    currentTypedWord = "";
                     image.style.display = 'none'
                     loadNextAudio();
-                },5000)
+                },4000)
             }else{
                 word.style.color = 'red';
+                
+                word.textContent = currentData.word;
+
+                
+                let audio = new Audio(currentData.sound);
+                audio.play();
 
                 setTimeout(()=>{
-                    word.textContent = "";
-                    word.style.color = 'black';
+                    word.textContent = "";  
+                    
+
+                    currentTypedWord = "";
+
+                    currentWordIndex++;
+
+                    loadNextAudio(); 
                 },1000);
             }
         }
@@ -84,8 +97,9 @@ startButton.addEventListener('click', function(){
 });
 
 function loadNextAudio(){
+    word.style.color = 'white';
     if(currentWordIndex<wordList.length){
-        let currentData = wordList[currentWordIndex];
+        currentData = wordList[currentWordIndex];
         let nextAudio = new Audio(currentData.sound);
         nextAudio.play();
 
@@ -93,6 +107,7 @@ function loadNextAudio(){
 
     }else{
         word.textContent = "Game over! Well done!"
+        score.textContent = 'Your final score is: '+myScore;
     }
 }
 
