@@ -200,7 +200,7 @@ readButton.addEventListener("click", function(){
 
     let randomIndex = Math.floor(Math.random() * activePool.length);
     
-    // FIX: Extracting the object out of the spliced single-item array directly using [0]
+   
     let currentItem = activePool.splice(randomIndex, 1)[0]; 
 
     let letters = currentItem.word.toUpperCase().split("");
@@ -211,7 +211,7 @@ readButton.addEventListener("click", function(){
     imageDisplay.classList.remove("show");
     imageDisplay.src = "";
 
-    // FIX: Removed "../" path breaks to stay aligned with your array directory mapping
+   
     let audio = new Audio(currentItem.audio);
     audio.play();
 
@@ -270,4 +270,5 @@ readButton.addEventListener("click", function(){
 
     }, 100); 
 });
+
 

@@ -14,6 +14,12 @@ h1{
     text-align: center;
     margin-bottom: 20px;
 }
+nav{
+    
+    background-color: hsl(180, 59%, 29%);
+    width: 100%;
+   
+}
 
 nav ul{
     width: 100%;
@@ -31,15 +37,16 @@ nav a{
     display: flex;
     text-decoration: none;
     align-items: center;
-    color: black
+    color: hsl(0, 81%, 96%);
+    font-weight: bold;
 }
 nav a:hover{
     background-color: #f3ededc4;
 }
-nav li:first-child {
+/* nav li:first-child {
     margin-right: auto;
     
-}
+} */
 
 .sidebar{
     position: fixed;
@@ -181,10 +188,21 @@ div.container .phonics{
 }
 
 
+
 .read-button{
     padding: 10px 20px;
     font-size: 20px;
     background-color: hsl(14, 82%, 56%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.submit-button{
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: hsl(152, 72%, 62%);
     color: white;
     border: none;
     cursor: pointer;
@@ -232,6 +250,124 @@ div.container .phonics{
 
 
 
+
+
+/* Animation page styles */
+
+.animate-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+
+}
+
+.stick{
+    display: flex;
+    width: 100%;
+    /* height: 100%; */
+    flex-direction: column;
+    /* margin-top: 20px; */
+    
+    background-color: aqua;
+    top: 0;
+    
+}
+
+.button-container{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    
+}
+
+.stick .images{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stick .images img{
+    display: none;
+}
+
+.button-container .phonics{
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0;
+    border: 1px solid black;
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    color: white;
+}
+
+.start-button{
+   
+    
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: hsl(14, 82%, 56%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+.stick .preview{
+   
+    width: 100%;
+    height: 150px;
+    font-size: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(14, 82%, 56%);
+    color: white;
+    margin-bottom: 10px;
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+}
+
+.preview .word{
+    height: inherit;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview .score{
+    height: inherit;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+}
+
+
+.ball:hover{
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-iteration-count: 5;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes bounce{
+    0%{ transform: translateY(0); }
+    50%{ transform: translateY(-150px); }
+    100%{ transform: translateY(0); }
+}   
+
+
 @media(max-width: 600px){
 
     .phonics{
@@ -252,7 +388,7 @@ div.container .phonics{
         height: 100%;
         object-fit: contain;
     }
-    .navigation{
+    .sidebar{
         flex-direction: column;
     }
      .menu{
@@ -268,6 +404,48 @@ div.container .phonics{
         justify-content: center;
         gap: 20px;
     }
+
+    /* animate page */
+
+    .animate-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .animate-container .preview{
+        width: 100%;
+
+    }
+    .animate-container .image{
+        width: 100px;
+        height: 100px;
+        margin-top: 10px;
+    }
+    .animate-container .display-content{
+        height: 80px;
+    }
+    .animate-container .phonics{
+        height: 70px;
+        /* font-size: 25px; */
+    }
+    .animate-container .button-container{
+        width: 100%;
+        display: flex;
+        height: 150px;
+        align-items: center;
+        justify-content: center;
+    }
+    .stick{
+        position: fixed;
+        top: 50px;
+        z-index: 1;
+    }
+    .preview .score{
+        font-size: 20px
+    }
+    .preview .word{
+        font-size: 20px;
+    }
+
 
 
 }
@@ -292,6 +470,54 @@ div.container .phonics{
         align-items: center;
         justify-content: center;
         gap: 20px;
+    }
+
+    /* animate page */
+
+    .animate-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .animate-container .preview{
+        width: 100%;
+
+    }
+    .animate-container .image{
+        width: 100px;
+        height: 100px;
+        margin-top: 10px;
+    }
+    .animate-container .display-content{
+        height: 80px;
+    }
+    .animate-container .phonics{
+        height: 70px;
+        /* font-size: 25px; */
+    }
+    .animate-container .button-container{
+        width: 100%;
+        display: flex;
+        height: 150px;
+        align-items: center;
+        justify-content: center;
+    }
+    .stick{
+        position: fixed;
+        top: 20px;
+        margin-bottom: 20px;
+    }
+    .preview .score{
+        font-size: 30px
+    }
+    .preview .word{
+        font-size: 30px;
+    }
+    nav{
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+        
     }
 
 }
