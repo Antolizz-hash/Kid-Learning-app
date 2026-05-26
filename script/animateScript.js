@@ -89,11 +89,7 @@ startButton.addEventListener('click', function(){
     })
 })
     
-    
-    // console.log(currentData)
-    
-    // console.log(currentTypedWord)
-    
+
 });
 
 function loadNextAudio(){
@@ -110,14 +106,6 @@ function loadNextAudio(){
         score.textContent = 'Your final score is: '+myScore;
     }
 }
-
-submitButton.addEventListener('click',function(){
-
-    
-    
-    score.textContent = 'Your score is: '+myScore
-})
-
 
 function showSidebar(){
     const sidebar = document.querySelector(".sidebar");

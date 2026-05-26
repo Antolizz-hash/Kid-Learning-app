@@ -268,7 +268,7 @@ div.container .phonics{
     width: 100%;
     /* height: 100%; */
     flex-direction: column;
-    /* margin-top: 20px; */
+    padding: 20px;
     
     background-color: aqua;
     top: 0;
